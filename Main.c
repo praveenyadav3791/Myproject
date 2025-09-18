@@ -21,3 +21,17 @@ void visitWebsite(char url[]) {
     current = newNode;
     printf("Visited: %s\n", url);
 }
+
+void displayHistory() {
+    Node *temp = head;
+    if (!temp) {
+        printf("History is empty.\n");
+        return;
+    }
+    printf("Browser History:\n");
+    while (temp) {
+        if (temp == current) printf("-> %s (Current Page)\n", temp->url);
+        else printf("   %s\n", temp->url);
+        temp = temp->next;
+    }
+}
