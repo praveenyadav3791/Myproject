@@ -86,7 +86,7 @@ int main() {
     int choice;
     char url[100];
     while (1) {
-        printf("\n==== Browser History Manager =====\n");
+        printf("\nBrowser History Manager \n");
         printf("1. Visit new website\n2. Delete a website\n3. Display history\n");
         printf("4. Go Backward\n5. Go Forward\n6. Clear history\n");
         printf("7. Search website\n8. Sort history alphabetically\n9. Exit\n");
