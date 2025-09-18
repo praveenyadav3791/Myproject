@@ -44,3 +44,13 @@ void goBackward() {
         printf("No previous page.\n");
     }
 }
+
+
+void goForward() {
+    if (current && current->next) {
+        current = current->next;
+        printf("Moved Forward. Current page: %s\n", current->url);
+    } else {
+        printf("No forward page.\n");
+    }
+}
