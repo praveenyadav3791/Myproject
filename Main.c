@@ -80,3 +80,51 @@ void clearHistory() {
     printf("History cleared.\n");
 }
 
+
+
+int main() {
+    int choice;
+    char url[100];
+    while (1) {
+        printf("\n==== Browser History Manager =====\n");
+        printf("1. Visit new website\n2. Delete a website\n3. Display history\n");
+        printf("4. Go Backward\n5. Go Forward\n6. Clear history\n");
+        printf("7. Search website\n8. Sort history alphabetically\n9. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice) {
+            case 1:
+                printf("Enter website URL: ");
+                scanf("%s", url);
+                visitWebsite(url);
+                break;
+            case 3:
+                displayHistory();
+                break;
+            case 4:
+                goBackward();
+                break;
+            case 5:
+                goForward();
+                break;
+            case 6:
+                clearHistory();
+                break;
+            case 7:
+                printf("Enter website to search: ");
+                scanf("%s", url);
+                searchWebsite(url);
+                break;
+            case 8:
+                sortHistory();
+                break;
+            case 9:
+                printf("Exiting...\n");
+                exit(0);
+            default:
+                printf("Invalid choice.\n");
+        }
+    }
+}
+
