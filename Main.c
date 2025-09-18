@@ -68,3 +68,5 @@ void searchWebsite(char url[]) {
     }
     printf("Website '%s' not found in history.\n", url);
 }
+
+
