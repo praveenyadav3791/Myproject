@@ -69,4 +69,14 @@ void searchWebsite(char url[]) {
     printf("Website '%s' not found in history.\n", url);
 }
 
+void clearHistory() {
+    Node *temp = head;
+    while (temp) {
+        Node *next = temp->next;
+        free(temp);
+        temp = next;
+    }
+    head = current = NULL;
+    printf("History cleared.\n");
+}
 
