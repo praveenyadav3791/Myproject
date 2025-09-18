@@ -35,3 +35,12 @@ void displayHistory() {
         temp = temp->next;
     }
 }
+
+void goBackward() {
+    if (current && current->prev) {
+        current = current->prev;
+        printf("Moved Backward. Current page: %s\n", current->url);
+    } else {
+        printf("No previous page.\n");
+    }
+}
