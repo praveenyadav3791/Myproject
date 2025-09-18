@@ -54,3 +54,17 @@ void goForward() {
         printf("No forward page.\n");
     }
 }
+
+void searchWebsite(char url[]) {
+    Node *temp = head;
+    int pos = 1;
+    while (temp) {
+        if (strcmp(temp->url, url) == 0) {
+            printf("Website '%s' found at position %d.\n", url, pos);
+            return;
+        }
+        temp = temp->next;
+        pos++;
+    }
+    printf("Website '%s' not found in history.\n", url);
+}
