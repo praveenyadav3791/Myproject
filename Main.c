@@ -80,13 +80,42 @@ void clearHistory() {
     printf("History cleared.\n");
 }
 
+void sortHistory() {
+    if (!head) {
+        printf("History is empty.\n");
+        return;
+    }
+    int swapped;
+    Node *ptr1;
+    Node *lptr = NULL;
+    
+    do {
+        swapped = 0;
+        ptr1 = head;
+        
+        while (ptr1->next != lptr) {
+            if (strcmp(ptr1->url, ptr1->next->url) > 0) {
+                char temp[100];
+                strcpy(temp, ptr1->url);
+                strcpy(ptr1->url, ptr1->next->url);
+                strcpy(ptr1->next->url, temp);
+                swapped = 1;
+            }
+            ptr1 = ptr1->next;
+        }
+        lptr = ptr1;
+    } while (swapped);
+    
+    printf("History sorted alphabetically.\n");
+}
+
 
 
 int main() {
     int choice;
     char url[100];
     while (1) {
-        printf("\n==== Browser History Manager =====\n");
+        printf("\nBrowser History Manager\n");
         printf("1. Visit new website\n2. Delete a website\n3. Display history\n");
         printf("4. Go Backward\n5. Go Forward\n6. Clear history\n");
         printf("7. Search website\n8. Sort history alphabetically\n9. Exit\n");
